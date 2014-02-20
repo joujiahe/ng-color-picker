@@ -33,7 +33,7 @@ angular.module('ngColorPicker', [])
             selected: '@'
         },
         restrict: 'AE',
-        template: '<span ng-repeat="color in colors" ng-click="pick(color)" style="{{ {true:\'border: 1px solid #333\'}[color===selected] }};background-color:{{color}};box-sizing:border-box;width:20px;height:20px;display:inline-block;"></span>',
+        template: '<span ng-repeat="color in colors" ng-class="{selected: (color===selected)}"  ng-click="pick(color)" style="background-color:{{color}};"></span>',
         controller: controller,
         link: link
     }
