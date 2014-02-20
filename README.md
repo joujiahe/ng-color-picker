@@ -1,4 +1,4 @@
-## ngColorPicker
+## ng-color-picker
 A simple color picker for AngularJS
 
 ### Requirements
