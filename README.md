@@ -11,7 +11,7 @@ A simple color picker for AngularJS
 
 ...
 
-<ng-color-picker callback='pickColor(color)' selected='{{selectedColor}}'></ng-color-picker>
+<ng-color-picker selected='selectedColor'></ng-color-picker>
 ```
 
 ### Demo
