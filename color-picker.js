@@ -20,17 +20,13 @@ angular.module('ngColorPicker', [])
 
         $scope.pick = function(color) {
             $scope.selected = color;
-            $scope.callback({
-                color: color
-            });
         }
     }
     function link(scope, element, attr) {
     }
     return {
         scope: {
-            callback: '&',
-            selected: '@'
+            selected: '='
         },
         restrict: 'AE',
         template: '<span ng-repeat="color in colors" ng-class="{selected: (color===selected)}"  ng-click="pick(color)" style="background-color:{{color}};"></span>',
