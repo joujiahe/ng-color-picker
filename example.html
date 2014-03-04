@@ -6,9 +6,12 @@
     <link href="color-picker.css" media="all" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="MainCtrl">
-    <ng-color-picker selected="selectedColor"></ng-color-picker>
+    <ng-color-picker ng-model="selectedColor"></ng-color-picker>
+    {{selectedColor}}
     <br />
     <input type="text" ng-model="selectedColor" />
+    <br />
+    <button ng-click="changeColor('#B64926')">Two way binding</button>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
     <script src="color-picker.js"></script>
     <script src="example.js"></script>
