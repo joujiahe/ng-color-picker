@@ -38,11 +38,16 @@ angular.module('ngColorPicker.directives', ['ngColorPicker.services'])
             scope: {
                 selected: '='
             },
-            restrict: 'AE',
-            template: '<span ng-repeat="color in colors" ng-class="{selected: (color===selected)}" ng-click="pick(color)" style="background-color:{{color}};"></span>',
+            restrict: 'E',
+            template: '<span ng-repeat="color in colors" ng-class="{selected: isSelected(color)}" ng-click="pick(color)" style="background-color:{{color}};"></span>',
             link: function (scope, element, attr, ngModel) {
                 scope.colors = ngColorPicker.colors();
                 scope.selected = scope.selected || scope.colors[0];
+
+                scope.isSelected = function (color) {
+                    return scope.selected === color;
+                };
+
                 scope.pick = function (color) {
                     scope.selected = color;
                 };

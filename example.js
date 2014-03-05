@@ -13,4 +13,8 @@ angular.module('example', ['ngColorPicker.directives', 'ngColorPicker.services']
 })
 .controller('MainCtrl', ['$scope', function($scope) {
     $scope.selectedColor = '#e1e1e1';
+
+    $scope.changeColor = function (color) {
+        $scope.selectedColor = color;
+    };
 }]);
