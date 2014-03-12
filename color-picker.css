@@ -1,10 +1,15 @@
-ng-color-picker span {
+ng-color-picker ul {
+    padding: 0;
+    margin: 0;
+}
+
+ng-color-picker li {
     width:20px;
     height:20px;
     box-sizing:border-box;
     display:inline-block;
 }
 
-ng-color-picker span.selected {
+ng-color-picker li.selected {
     border: 1px solid #333;
 }

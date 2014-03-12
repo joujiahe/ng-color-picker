@@ -1,16 +1,13 @@
-angular.module('example', ['ngColorPicker.directives', 'ngColorPicker.services'])
-.config(function (ngColorPickerProvider) {
+angular.module('example', ['ngColorPicker'])
 
-    ngColorPickerProvider.set([
+.controller('MainCtrl', ['$scope', function($scope) {
+    $scope.colors = [
         '#468966',
         '#FFF0A5',
         '#FFB03B',
         '#B64926',
         '#8E2800',
         '#e1e1e1'
-    ]);
-
-})
-.controller('MainCtrl', ['$scope', function($scope) {
+    ];
     $scope.selectedColor = '#e1e1e1';
 }]);

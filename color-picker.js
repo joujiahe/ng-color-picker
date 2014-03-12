@@ -1,52 +1,35 @@
-var services = angular.module('ngColorPicker.services', [])
-    .provider('ngColorPicker', function () {
+angular.module('ngColorPicker', [])
+.directive('ngColorPicker', function() {
+    var defaultColors =  [
+        '#7bd148',
+        '#5484ed',
+        '#a4bdfc',
+        '#46d6db',
+        '#7ae7bf',
+        '#51b749',
+        '#fbd75b',
+        '#ffb878',
+        '#ff887c',
+        '#dc2127',
+        '#dbadff',
+        '#e1e1e1'
+    ];
+    return {
+        scope: {
+            selected: '=',
+            customizedColors: '=colors'
+        },
+        restrict: 'AE',
+        template: '<ul><li ng-repeat="color in colors" ng-class="{selected: (color===selected)}" ng-click="pick(color)" style="background-color:{{color}};"></li></ul>',
+        link: function (scope, element, attr) {
+            scope.colors = scope.customizedColors || defaultColors;
+            scope.selected = scope.selected || scope.colors[0];
 
-        var colors,
-            default_colors = [
-                '#7bd148',
-                '#5484ed',
-                '#a4bdfc',
-                '#46d6db',
-                '#7ae7bf',
-                '#51b749',
-                '#fbd75b',
-                '#ffb878',
-                '#ff887c',
-                '#dc2127',
-                '#dbadff',
-                '#e1e1e1'
-            ];
-
-        this.set = function (new_colors) {
-            colors = new_colors;
-        };
-
-        this.$get = function () {
-            return {
-                colors: function () {
-                    return colors || default_colors;
-                }
+            scope.pick = function (color) {
+                scope.selected = color;
             };
-        };
 
-    });
+        }
+    };
 
-angular.module('ngColorPicker.directives', ['ngColorPicker.services'])
-    .directive('ngColorPicker', function (ngColorPicker) {
-
-        return {
-            scope: {
-                selected: '='
-            },
-            restrict: 'AE',
-            template: '<span ng-repeat="color in colors" ng-class="{selected: (color===selected)}" ng-click="pick(color)" style="background-color:{{color}};"></span>',
-            link: function (scope, element, attr, ngModel) {
-                scope.colors = ngColorPicker.colors();
-                scope.selected = scope.selected || scope.colors[0];
-                scope.pick = function (color) {
-                    scope.selected = color;
-                };
-            }
-        };
-
-    });
+});
