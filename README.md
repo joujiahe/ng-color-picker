@@ -15,21 +15,8 @@ A simple color picker for AngularJS
 ```
 
 ### Changing the default colors
-```js
-angular.module('example', ['ngColorPicker.directives', 'ngColorPicker.services'])
-.config(function (ngColorPickerProvider) {
-
-	// Set an array of colors here. If this is not configured, it will fall back on a default set.
-	ngColorPickerProvider.set([
-		'#468966',
-		'#FFF0A5',
-		'#FFB03B',
-		'#B64926',
-		'#8E2800',
-        '#e1e1e1'
-	]);
-
-})
+```html
+<ng-color-picker selected='selectedColor' colors="colors"></ng-color-picker>
 ```
 
 ### Demo
