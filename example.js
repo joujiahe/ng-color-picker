@@ -9,5 +9,5 @@ angular.module('example', ['ngColorPicker'])
         '#8E2800',
         '#e1e1e1'
     ];
-    $scope.selectedColor = '#e1e1e1';
+    $scope.selected = '#e1e1e1';
 }]);

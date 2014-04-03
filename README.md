@@ -11,12 +11,12 @@ A simple color picker for AngularJS
 
 ...
 
-<ng-color-picker selected='selectedColor'></ng-color-picker>
+<ng-color-picker selected='selected'></ng-color-picker>
 ```
 
 ### Changing the default colors
 ```html
-<ng-color-picker selected='selectedColor' colors="colors"></ng-color-picker>
+<ng-color-picker selected='selected' colors="colors"></ng-color-picker>
 ```
 
 ### Demo
