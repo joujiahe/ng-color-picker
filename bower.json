@@ -13,6 +13,11 @@
   "moduleType": [
     "globals"
   ],
+  "ignore": [
+    "example.html",
+    "example.js",
+    "index.php"
+  ]
   "keywords": [
     "color-picker",
     "picker",
