@@ -1,22 +1,22 @@
 {
   "name": "ng-color-picker",
-  "version": "1.0.0",
+  "version": "1.0",
   "homepage": "https://github.com/joujiahe/ng-color-picker",
   "authors": [
     "Johnson Chou <joujiahe@gmail.com>"
   ],
   "description": "A simple color picker for AngularJS",
   "main": [
-    "color-picker.js",
-    "color-picker.css"
+    "./color-picker.js",
+    "./color-picker.css"
   ],
   "moduleType": [
     "globals"
   ],
   "ignore": [
-    "example.html",
-    "example.js",
-    "index.php"
+    "./example.html",
+    "./example.js",
+    "./index.php"
   ]
   "keywords": [
     "color-picker",
