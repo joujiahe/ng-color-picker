@@ -21,3 +21,6 @@ A simple color picker for AngularJS
 
 ### Demo
 [http://ng-color-picker.herokuapp.com](http://ng-color-picker.herokuapp.com/)
+
+### License
+The MIT License
