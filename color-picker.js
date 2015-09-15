@@ -1,5 +1,7 @@
 angular.module('ngColorPicker', [])
-.directive('ngColorPicker', function() {
+.provider('ngColorPickerConfig', function(){
+    
+    var templateUrl = 'color-picker.html';
     var defaultColors =  [
         '#7bd148',
         '#5484ed',
@@ -14,15 +16,30 @@ angular.module('ngColorPicker', [])
         '#dbadff',
         '#e1e1e1'
     ];
+    this.setTemplateUrl = function(url){
+        templateUrl = url;
+    };
+    this.setDefaultColors = function(colors){
+        defaultColors = colors;
+    };
+    this.$get = function(){
+        return {
+            templateUrl : templateUrl,
+            defaultColors: defaultColors
+        }
+    }
+})
+.directive('ngColorPicker', ['ngColorPickerConfig',function(ngColorPickerConfig) {
+    
     return {
         scope: {
             selected: '=',
             customizedColors: '=colors'
         },
         restrict: 'AE',
-        templateUrl: 'color-picker.html',
+        templateUrl: ngColorPickerConfig.templateUrl,
         link: function (scope, element, attr) {
-            scope.colors = scope.customizedColors || defaultColors;
+            scope.colors = scope.customizedColors || ngColorPickerConfig.defaultColors;
             scope.selected = scope.selected || scope.colors[0];
 
             scope.pick = function (color) {
@@ -32,4 +49,4 @@ angular.module('ngColorPicker', [])
         }
     };
 
-});
+}]);
