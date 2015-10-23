@@ -18,9 +18,11 @@ angular.module('ngColorPicker', [])
     ];
     this.setTemplateUrl = function(url){
         templateUrl = url;
+        return this;
     };
     this.setDefaultColors = function(colors){
         defaultColors = colors;
+        return this;
     };
     this.$get = function(){
         return {
